@@ -245,7 +245,14 @@ curtains-effect-js-and-css/
 | Images not loading | Verify image paths are correct and accessible |
 | Z-index conflicts | Curtain uses z-index 10000+ - adjust if needed |
 
-## 📄 License
+## �‍💻 Author
+
+**Tulsiram Kushwah** - Software Engineer
+- 🔗 LinkedIn: [tulsiram-kushwah-software-engineer](https://www.linkedin.com/in/tulsiram-kushwah-software-engineer/)
+- 📘 Facebook: [ramp00786](https://www.facebook.com/ramp00786)
+- 🐙 GitHub: [@ramp00786](https://github.com/ramp00786)
+
+## �📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -259,7 +266,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Credits
 
-- Created with ❤️ for the web development community
+- Created with ❤️ by **Tulsiram Kushwah** for the web development community
 - Icons by [Font Awesome](https://fontawesome.com/)
 - Inspired by theater curtains and dramatic reveals
 
@@ -271,4 +278,4 @@ For support, questions, or feature requests, please open an issue.
 
 ---
 
-**Made with 🎭 for creating magical web experiences**
+**Made with 🎭 by Tulsiram Kushwah for creating magical web experiences**

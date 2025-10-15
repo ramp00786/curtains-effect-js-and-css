@@ -1,7 +1,9 @@
 /**
  * Curtain Opening Effect - Reusable JavaScript
  * Created for IISF 2025 - Can be used on any website
- * Author: GitHub Copilot
+ * Author: Tulsiram Kushwah
+ * LinkedIn: https://www.linkedin.com/in/tulsiram-kushwah-software-engineer/
+ * Facebook: https://www.facebook.com/ramp00786
  * Version: 1.0
  * 
  * Dependencies: None (Pure JavaScript)
@@ -48,13 +50,46 @@ const CurtainEffect = {
      * Initialize the curtain effect
      * @param {Object} userOptions - Configuration options
      */
+    // init(userOptions = {}) {
+    //     this.options = { ...this.defaultOptions, ...userOptions };
+    //     this.createCurtainHTML();
+    //     this.applyCurtainImages(); // Apply custom images if provided
+    //     this.bindEvents();
+    //     this.startSparkles();
+
+    //     if (this.options.autoOpen) {
+    //         setTimeout(() => {
+    //             this.openCurtains();
+    //         }, this.options.autoOpenDelay);
+    //     }
+
+    //     // Hide body scrollbar when curtains are closed
+    //     document.body.style.overflow = 'hidden';
+
+    //     console.log('🎭 Curtain Effect initialized successfully!');
+    //     if (this.options.leftCurtainImage || this.options.rightCurtainImage) {
+    //         console.log('🖼️ Custom curtain images applied');
+    //     }
+    // },
+
     init(userOptions = {}) {
+        // ✅ FIRST: Destroy any existing curtain instance
+        if (this.elements.container) {
+            console.log('🎭 Destroying previous curtain instance...');
+            this.destroy();
+        }
+
+        // ✅ RESET: Clear all state
+        this.isOpen = false;
+        this.isAnimating = false;
+
+        // ✅ NOW: Initialize new curtain
         this.options = { ...this.defaultOptions, ...userOptions };
         this.createCurtainHTML();
-        this.applyCurtainImages(); // Apply custom images if provided
-        this.bindEvents();
+        this.applyCurtainImages();
+        this.bindEvents(); // This will bind to the NEW button
         this.startSparkles();
-        
+
         if (this.options.autoOpen) {
             setTimeout(() => {
                 this.openCurtains();
@@ -118,7 +153,7 @@ const CurtainEffect = {
         this.elements.title = document.getElementById('curtainTitle');
         this.elements.subtitle = document.getElementById('curtainSubtitle');
         this.elements.sparklesContainer = document.getElementById('curtainSparkles');
-        
+
         // Apply speed setting to curtain panels
         this.applySpeedSetting();
     },
@@ -152,7 +187,7 @@ const CurtainEffect = {
     applySpeedSetting() {
         const speedInSeconds = this.options.speed / 1000;
         const transitionValue = `transform ${speedInSeconds}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-        
+
         // Apply transition to both curtain panels
         if (this.elements.leftPanel) {
             this.elements.leftPanel.style.transition = transitionValue;
@@ -160,7 +195,7 @@ const CurtainEffect = {
         if (this.elements.rightPanel) {
             this.elements.rightPanel.style.transition = transitionValue;
         }
-        
+
         console.log(`🎭 Curtain speed set to ${this.options.speed}ms (${speedInSeconds}s)`);
     },
 
@@ -226,16 +261,16 @@ const CurtainEffect = {
         setTimeout(() => {
             this.isOpen = true;
             this.isAnimating = false;
-            
+
             // Hide the entire curtain container
             this.elements.container.classList.add('revealed');
-            
+
             // Remove from DOM after fade out
             setTimeout(() => {
                 if (this.elements.container.parentNode) {
                     this.elements.container.parentNode.removeChild(this.elements.container);
                 }
-                
+
                 // Trigger completion callback
                 if (typeof this.options.onComplete === 'function') {
                     this.options.onComplete();
@@ -246,7 +281,7 @@ const CurtainEffect = {
 
                 console.log('🎭 Curtains opened successfully!');
             }, 1000);
-            
+
         }, this.options.speed);
 
         // Disable body scroll initially
@@ -302,10 +337,10 @@ const CurtainEffect = {
             const audio = new Audio('curtain-assets/sounds/clapping.wav');
             audio.volume = 0.7; // Set volume to 70%
             audio.currentTime = 0; // Start from beginning
-            
+
             // Play the sound
             const playPromise = audio.play();
-            
+
             // Handle play promise for modern browsers
             if (playPromise !== undefined) {
                 playPromise
@@ -378,7 +413,7 @@ const CurtainEffect = {
         if (this.elements.container) {
             // Remove existing theme classes
             this.elements.container.classList.remove('curtain-theme-royal', 'curtain-theme-elegant', 'curtain-theme-gold');
-            
+
             // Add new theme class
             if (theme !== 'default') {
                 this.elements.container.classList.add('curtain-theme-' + theme);
@@ -408,14 +443,14 @@ const CurtainEffect = {
         if (this.elements.container && this.elements.container.parentNode) {
             this.elements.container.parentNode.removeChild(this.elements.container);
         }
-        
+
         // Reset state
         this.isOpen = false;
         this.isAnimating = false;
-        
+
         // Re-enable body scroll
         document.body.style.overflow = '';
-        
+
         console.log('🎭 Curtain Effect destroyed');
     }
 };
@@ -423,17 +458,17 @@ const CurtainEffect = {
 // Auto-initialization logic
 function initializeCurtain() {
     console.log('🎭 Curtain script loading...');
-    
+
     let initAttempts = 0;
     const maxAttempts = 10;
-    
+
     function attemptInitialization() {
         initAttempts++;
         console.log(`🎭 Initialization attempt ${initAttempts}/${maxAttempts}`);
-        
+
         if (typeof CurtainEffect !== 'undefined') {
             console.log('🎭 CurtainEffect found! Initializing...');
-            
+
             // Check for data attributes first
             const autoInit = document.querySelector('[data-curtain-auto]');
             if (autoInit) {
@@ -450,22 +485,22 @@ function initializeCurtain() {
                     leftCurtainImage: autoInit.dataset.curtainLeftImage || '',
                     rightCurtainImage: autoInit.dataset.curtainRightImage || ''
                 };
-                
+
                 CurtainEffect.init(options);
                 return;
             }
-            
+
             // Check if window.curtainConfig exists (set by page)
             if (typeof window.curtainConfig !== 'undefined') {
                 console.log('🎭 Using window.curtainConfig settings');
                 CurtainEffect.init(window.curtainConfig);
                 return;
             }
-            
+
             // Default initialization if no config found
             console.log('🎭 Using default settings');
             CurtainEffect.init();
-            
+
         } else {
             console.warn(`🎭 CurtainEffect not loaded yet (attempt ${initAttempts})`);
             if (initAttempts < maxAttempts) {
@@ -478,7 +513,7 @@ function initializeCurtain() {
             }
         }
     }
-    
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', attemptInitialization);
