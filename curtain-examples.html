@@ -762,108 +762,16 @@
                 </div>
             </div>
 
-        function speedExample() {
-            CurtainEffect.init({
-                title: 'Speed Control',
-                subtitle: 'Fast opening animation (1 second)',
-                buttonText: 'Quick Open',
-                theme: 'gold',
-                speed: 1000,
-                sparkles: true
-            });
-        }
-
-        // Real-World Use Case Examples
-        function ecommerceExample() {
-            CurtainEffect.init({
-                title: 'Black Friday Sale',
-                subtitle: '50% Off Everything - Limited Time Only!',
-                buttonText: 'Shop Now',
-                theme: 'gold',
-                autoOpen: true,
-                autoOpenDelay: 2000,
-                speed: 1500,
-                sparkles: true,
-                onComplete: function() {
-                    alert('🛒 Welcome to our Black Friday Sale! Start shopping with 50% off!');
-                }
-            });
-        }
-
-        function eventExample() {
-            CurtainEffect.init({
-                title: 'IISF 2025',
-                subtitle: 'India International Science Festival',
-                buttonText: 'Enter Festival',
-                theme: 'saffron',
-                sparkles: true,
-                sound: true,
-                speed: 3000,
-                onComplete: function() {
-                    alert('🎭 Welcome to IISF 2025! Explore the world of science and innovation!');
-                }
-            });
-        }
-
-        function portfolioExample() {
-            CurtainEffect.init({
-                title: 'John Doe',
-                subtitle: 'Creative Web Developer & Designer',
-                buttonText: 'View Portfolio',
-                theme: 'elegant',
-                sparkles: false,
-                speed: 2500,
-                onComplete: function() {
-                    alert('💼 Welcome to my portfolio! Let\'s create something amazing together.');
-                }
-            });
-        }
-
-        function restaurantExample() {
-            CurtainEffect.init({
-                title: 'Fine Dining Experience',
-                subtitle: 'Reserve your table for an unforgettable evening',
-                buttonText: 'Make Reservation',
-                theme: 'royal',
-                autoOpen: true,
-                autoOpenDelay: 4000,
-                sparkles: true,
-                speed: 2500,
-                onComplete: function() {
-                    alert('🍽️ Welcome to our restaurant! Ready to make a reservation?');
-                    // In real implementation: window.location.href = '/reservations';
-                }
-            });
-        }
-
-        function gamingExample() {
-            CurtainEffect.init({
-                title: 'Epic Game Launch',
-                subtitle: 'The adventure awaits - Are you ready?',
-                buttonText: 'Start Playing',
-                theme: 'default',
-                sparkles: true,
-                sound: true,
-                speed: 1800,
-                onComplete: function() {
-                    alert('🎮 Game On! Welcome to the ultimate gaming experience!');
-                }
-            });
-        }
-
-        function culturalExample() {
-            CurtainEffect.init({
-                title: 'Cultural Heritage',
-                subtitle: 'Discover the beauty of traditional art and culture',
-                buttonText: 'Explore Heritage',
-                theme: 'saffron',
-                sparkles: true,
-                speed: 3500,
-                onComplete: function() {
-                    alert('🏛️ Welcome to our cultural exhibition! Enjoy exploring our heritage.');
-                }
-            });
-        }           <i class="fas fa-volume-mute" style="color: #FFA500;"></i>
+            <h3>13. Troubleshooting & Common Issues</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-exclamation-triangle" style="color: #FFA500;"></i>
+                    <div>
+                        <strong>Curtains not showing:</strong> Check that CSS and JS files are properly linked and loaded
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-volume-mute" style="color: #FFA500;"></i>
                     <div>
                         <strong>Sound not playing:</strong> Browsers block autoplay - user interaction required first
                     </div>
@@ -1003,62 +911,154 @@
                 sparkles: true
             });
         }
+
+        // Real-World Use Case Examples
+        function ecommerceExample() {
+            CurtainEffect.init({
+                title: 'Black Friday Sale',
+                subtitle: '50% Off Everything - Limited Time Only!',
+                buttonText: 'Shop Now',
+                theme: 'gold',
+                autoOpen: true,
+                autoOpenDelay: 2000,
+                speed: 1500,
+                sparkles: true,
+                onComplete: function() {
+                    alert('🛒 Welcome to our Black Friday Sale! Start shopping with 50% off!');
+                }
+            });
+        }
+
+        function eventExample() {
+            CurtainEffect.init({
+                title: 'IISF 2025',
+                subtitle: 'India International Science Festival',
+                buttonText: 'Enter Festival',
+                theme: 'saffron',
+                sparkles: true,
+                sound: true,
+                speed: 3000,
+                onComplete: function() {
+                    alert('🎭 Welcome to IISF 2025! Explore the world of science and innovation!');
+                }
+            });
+        }
+
+        function portfolioExample() {
+            CurtainEffect.init({
+                title: 'John Doe',
+                subtitle: 'Creative Web Developer & Designer',
+                buttonText: 'View Portfolio',
+                theme: 'elegant',
+                sparkles: false,
+                speed: 2500,
+                onComplete: function() {
+                    alert('💼 Welcome to my portfolio! Let\'s create something amazing together.');
+                }
+            });
+        }
+
+        function restaurantExample() {
+            CurtainEffect.init({
+                title: 'Fine Dining Experience',
+                subtitle: 'Reserve your table for an unforgettable evening',
+                buttonText: 'Make Reservation',
+                theme: 'royal',
+                autoOpen: true,
+                autoOpenDelay: 4000,
+                sparkles: true,
+                speed: 2500,
+                onComplete: function() {
+                    alert('🍽️ Welcome to our restaurant! Ready to make a reservation?');
+                    // In real implementation: window.location.href = '/reservations';
+                }
+            });
+        }
+
+        function gamingExample() {
+            CurtainEffect.init({
+                title: 'Epic Game Launch',
+                subtitle: 'The adventure awaits - Are you ready?',
+                buttonText: 'Start Playing',
+                theme: 'default',
+                sparkles: true,
+                sound: true,
+                speed: 1800,
+                onComplete: function() {
+                    alert('🎮 Game On! Welcome to the ultimate gaming experience!');
+                }
+            });
+        }
+
+        function culturalExample() {
+            CurtainEffect.init({
+                title: 'Cultural Heritage',
+                subtitle: 'Discover the beauty of traditional art and culture',
+                buttonText: 'Explore Heritage',
+                theme: 'saffron',
+                sparkles: true,
+                speed: 3500,
+                onComplete: function() {
+                    alert('🏛️ Welcome to our cultural exhibition! Enjoy exploring our heritage.');
+                }
+            });
+        }
     </script>
 
     <!-- Footer Section -->
-    <div style=\"background: rgba(0, 0, 0, 0.2); margin-top: 60px; padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);\">
-        <div class=\"container\">
-            <h3 style=\"color: #FFD700; margin-bottom: 20px;\">🚀 Ready to Use This in Your Project?</h3>
-            <p style=\"font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;\">
+    <div style="background: rgba(0, 0, 0, 0.2); margin-top: 60px; padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">🚀 Ready to Use This in Your Project?</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
                 This curtain effect is completely <strong>free and open source</strong>. 
                 Download it, customize it, and use it in your projects!
             </p>
             
-            <div style=\"display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 30px 0;\">
-                <a href=\"https://github.com/ramp00786/curtains-effect-js-and-css/archive/main.zip\" 
-                   class=\"github-link\" style=\"background: #28a745;\">
-                    <i class=\"fas fa-download\"></i> Download ZIP
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
+                <a href="https://github.com/ramp00786/curtains-effect-js-and-css/archive/main.zip" 
+                   class="github-link" style="background: #28a745;">
+                    <i class="fas fa-download"></i> Download ZIP
                 </a>
-                <a href=\"https://github.com/ramp00786/curtains-effect-js-and-css\" 
-                   target=\"_blank\" class=\"github-link\">
-                    <i class=\"fab fa-github\"></i> View on GitHub
+                <a href="https://github.com/ramp00786/curtains-effect-js-and-css" 
+                   target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
                 </a>
-                <a href=\"https://github.com/ramp00786/curtains-effect-js-and-css/issues\" 
-                   target=\"_blank\" class=\"github-link\" style=\"background: #dc3545;\">
-                    <i class=\"fas fa-bug\"></i> Report Issue
+                <a href="https://github.com/ramp00786/curtains-effect-js-and-css/issues" 
+                   target="_blank" class="github-link" style="background: #dc3545;">
+                    <i class="fas fa-bug"></i> Report Issue
                 </a>
             </div>
 
-            <div class=\"feature-list\" style=\"margin: 40px 0;\">
-                <div class=\"feature-item\">
-                    <i class=\"fas fa-heart\" style=\"color: #e91e63;\"></i>
+            <div class="feature-list" style="margin: 40px 0;">
+                <div class="feature-item">
+                    <i class="fas fa-heart" style="color: #e91e63;"></i>
                     <div>
                         <strong>Made with Love:</strong> Created for the web development community
                     </div>
                 </div>
-                <div class=\"feature-item\">
-                    <i class=\"fas fa-code\"></i>
+                <div class="feature-item">
+                    <i class="fas fa-code"></i>
                     <div>
                         <strong>Open Source:</strong> MIT License - Free for personal and commercial use
                     </div>
                 </div>
-                <div class=\"feature-item\">
-                    <i class=\"fas fa-users\"></i>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
                     <div>
                         <strong>Community:</strong> Contributions and feedback welcome on GitHub
                     </div>
                 </div>
             </div>
 
-            <hr style=\"border: none; height: 1px; background: rgba(255, 255, 255, 0.1); margin: 30px 0;\">
+            <hr style="border: none; height: 1px; background: rgba(255, 255, 255, 0.1); margin: 30px 0;">
             
-            <p style=\"opacity: 0.7; font-size: 0.9rem;\">
-                Icons by <a href=\"https://fontawesome.com/\" target=\"_blank\" style=\"color: #FFD700;\">Font Awesome</a> • 
+            <p style="opacity: 0.7; font-size: 0.9rem;">
+                Icons by <a href="https://fontawesome.com/" target="_blank" style="color: #FFD700;">Font Awesome</a> • 
                 Inspired by theater curtains and dramatic reveals • 
-                <span style=\"color: #FFD700;\">★</span> Star us on GitHub if you like this project!
+                <span style="color: #FFD700;">★</span> Star us on GitHub if you like this project!
             </p>
             
-            <p style=\"margin-top: 20px; font-size: 0.8rem; opacity: 0.5;\">
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">
                 © 2025 Curtain Opening Effect • Made with 🎭 for creating magical web experiences
             </p>
         </div>
